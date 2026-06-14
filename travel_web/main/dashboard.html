@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+        }
+
+        /* HEADER */
+        .header {
+            background: linear-gradient(rgba(0, 0, 0, 0.5),
+                    rgba(0, 0, 0, 0.5)),
+                url('../assets/image/image.png');
+
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            width: 100%;
+            padding: 20px 60px;
+        }
+
+        .navbar_main_content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+
+        }
+
+        .main_link {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .main_link:hover {
+            color: #ffd700;
+        }
+
+        /* SEARCH */
+        input[type="text"] {
+            padding: 12px 18px;
+            border: none;
+            border-radius: 30px;
+            width: 250px;
+            position: relative;
+            left: 70px;
+            outline: none;
+        }
+
+        .search_button {
+            position: relative;
+            right: 70px;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 30px;
+            background: #ff7b00;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .search_button:hover {
+            background: #e66d00;
+        }
+
+        /* SOCIAL */
+        .social_media_link {
+            text-decoration: none;
+            color: white;
+
+        }
+
+        .social_media {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 18px;
+        }
+
+        /* SECOND NAV */
+        .main_link_nav {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+
+        /* HERO CONTENT */
+        .header_title {
+            margin-top: auto;
+            font-size: 60px;
+            text-align: center;
+            max-width: 900px;
+            padding: 0 20px;
+        }
+
+        .header_subtitle {
+            font-size: 22px;
+            margin-top: 15px;
+            margin-bottom: auto;
+            text-align: center;
+            color: #e0e0e0;
+        }
+
+        /* MAIN */
+        .main-content {
+            padding: 60px 10%;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .video-card {
+            width: 350px;
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            transition: 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-card video {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .card-content p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            padding: 10px 18px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+/* 
+        .box_card {
+            position: relative;
+            display: flex;
+        } */
+
+        .box_card {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        /* Share Sidebar */
+        .share-bar {
+            position: fixed;
+            /* right: 20px; */
+            left: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .share-bar h4 {
+            color: #666;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .share-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-decoration: none;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            transition: .3s;
+        }
+
+        .share-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .facebook {
+            background: #3b5998;
+        }
+
+        .twitter {
+            background: #000;
+        }
+
+        .pinterest {
+            background: #e60023;
+        }
+
+        .comment-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #555;
+            font-size: 24px;
+        }
+
+        .comment-box span {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .scroll-top {
+            margin-top: 100px;
+            color: #555;
+            font-size: 40px;
+            text-decoration: none;
+        }
+
+        .scroll-top:hover {
+            color: #000;
+        }
+
+        .profile {
+            position: relative;
+            left: 100px;
+            width: 280px;
+            height: 400px;
+            background: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .profile img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ff7b00;
+        }
+
+        .profile h3 {
+            margin: 15px 0 10px;
+            color: #333;
+        }
+
+        .profile p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .profile-social {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .profile-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #ff7b00;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: .3s;
+        }
+
+        .profile-social a:hover {
+            background: #e66d00;
+            transform: translateY(-3px);
+        }
+
+
+        .blog-card {
+            position: relative;
+            left: 50px;
+            /* width: 350px;
+            background: #fff; */
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+            transition: all 0.3s ease;
+            margin: 20px;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .blog-card h3 {
+            font-size: 22px;
+            color: #222;
+            padding: 15px 20px 10px;
+            line-height: 1.4;
+        }
+
+        .blog-card p {
+            padding: 0 20px;
+            color: #666;
+            font-size: 14px;
+            line-height: 1.7;
+
+            /* Description ko 5 lines tak limit karega */
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .blog-card .btn {
+            margin: 20px;
+            padding: 12px 22px;
+            border: none;
+            border-radius: 30px;
+            background: #ff7b00;
+            color: #fff;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .blog-card .btn:hover {
+            background: #e66d00;
+        }
+
+        @media (max-width: 1024px) {
+            .main-content {
+                padding: 40px 5%;
+            }
+
+            .header_title {
+                font-size: 45px;
+            }
+        }
+
+        /* TABLET */
+        @media (max-width: 768px) {
+
+            /* NAVBAR */
+            .navbar {
+                padding: 15px 20px;
+            }
+
+            .navbar_main_content {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .main_link_nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            /* SEARCH */
+            input[type="text"] {
+                width: 100%;
+                left: 0;
+            }
+
+            .search_button {
+                right: 0;
+                margin-top: 10px;
+                width: 100%;
+            }
+
+            /* HERO TEXT */
+            .header_title {
+                font-size: 32px;
+                padding: 0 10px;
+            }
+
+            .header_subtitle {
+                font-size: 16px;
+                padding: 0 10px;
+            }
+
+            /* CARDS */
+            .box_card {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .video-card {
+                width: 90%;
+            }
+
+            .blog-card {
+                left: 0;
+                width: 90%;
+            }
+
+            /* PROFILE */
+            .profile {
+                left: 0;
+                width: 90%;
+                height: auto;
+            }
+
+            /* SHARE BAR REMOVE / FIX */
+            .share-bar {
+                display: none;
+            }
+        }
+
+        /* MOBILE */
+        @media (max-width: 480px) {
+
+            .header_title {
+                font-size: 26px;
+            }
+
+            .header_subtitle {
+                font-size: 14px;
+            }
+
+            .btn {
+                width: 100%;
+                font-size: 14px;
+            }
+
+            .blog-card img {
+                height: 250px;
+            }
+
+            .video-card video {
+                height: 180px;
+            }
+            
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="navbar_main_content">
+                <a href="" class="main_link">Travel Blogs</a>
+                <input type="text" placeholder="Search...">
+                <button class="search_button">Search</button>
+
+
+                <a href="#" class="social_media_link"><span class="social_media">10K <i
+                            class="fa fa-facebook"></i></span></a>
+                <a href="#" class="social_media_link"><span class="social_media">20K <i
+                            class="fa fa-twitter"></i></span></a>
+                <a href="#" class="social_media_link"><span class="social_media">30K <i
+                            class="fa fa-instagram"></i></span></a>
+            </div>
+        </nav>
+        <nav class="main_link_nav">
+            <a href="" class="main_link">Home</a>
+            <a href="" class="main_link">About</a>
+            <a href="#video-content" class="main_link">Videos</a>
+            <a href="#latest-blogs" class="main_link">Blogs</a>
+            <a href="contact.html" class="main_link">Contact</a>
+        </nav>
+        <h1 class="header_title">24 Gorgeous Travel Blogs You’ll Love in 2026</h1>
+        <span class="header_subtitle">Taking Storytelling To The Next Level</span>
+    </header>
+    <main class="main-content">
+        <div class="box_card">
+            <div class="share-bar">
+                <h4>SHARE</h4>
+
+                <a href="#" class="share-btn facebook">
+                    <i class="fa fa-facebook"></i>
+                </a>
+
+                <a href="#" class="share-btn twitter">
+                    <i class="fa fa-twitter"></i>
+                </a>
+
+                <a href="#" class="share-btn pinterest">
+                    <i class="fa fa-pinterest"></i>
+                </a>
+
+                <div class="comment-box">
+                    <i class="fa fa-commenting-o"></i>
+                    <span>43</span>
+                </div>
+
+                <a href="#" class="scroll-top">
+                    <i class="fa fa-arrow-up"></i>
+                </a>
+            </div>
+            <div class="container">
+
+                <div class="video-card">
+                    <video controls autoplay loop muted>
+                        <source
+                            src="../assets/videos/vidssave.com Edinburgh 4K_ Scotland’s Mystical City of Castles and Secrets 720P.mp4"
+                            type="video/mp4">
+                    </video>
+
+                    <div class="card-content">
+                        <h3>Edinburgh Scotland’s Mystical City of Castles and Secrets</h3>
+
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            Libero deleniti consectetur voluptatem reprehenderit, enim
+                            animi nam, quaerat minus explicabo doloribus expedita
+                            aspernatur exercitationem excepturi odit minima nisi harum
+                            molestiae natus.
+                        </p>
+
+                        <button class="btn">Read More</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container" id="video-content">
+                <div class="video-card">
+                    <video controls autoplay loop muted>
+                        <source
+                            src="../assets/videos/vidssave.com Edinburgh 4K_ Scotland’s Mystical City of Castles and Secrets 720P.mp4"
+                            type="video/mp4">
+                    </video>
+
+                    <div class="card-content">
+                        <h3>Edinburgh Scotland’s Mystical City of Castles and Secrets</h3>
+
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            Libero deleniti consectetur voluptatem reprehenderit, enim
+                            animi nam, quaerat minus explicabo doloribus expedita
+                            aspernatur exercitationem excepturi odit minima nisi harum
+                            molestiae natus.
+                        </p>
+
+                        <button class="btn">Read More</button>
+                    </div>
+                </div>
+                <div class="profile">
+                    <img src="../assets/image/profile.png" alt="Profile">
+
+                    <h3>Shubham Kumar</h3>
+
+                    <p>
+                        Travel Blogger & Photographer. Exploring the world's most
+                        beautiful destinations and sharing unforgettable stories.
+                    </p>
+
+                    <div class="profile-social">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="content-bogs-section" id="latest-blogs">
+            <h2>Latest Blogs</h2>
+            <div class="blog-cards">
+
+                <article class="blog-card">
+                    <img src="../assets/image/Most-Popular-tourist-destination-in-Bihar.jpg" alt="Blog 1">
+                    <h3>10 Best Travel Destinations for 2026</h3>
+                    <p>
+                        popular tourist destination in Bihar
+                        RTC Buses
+                        April 3, 2023Parul Jain
+                        6 Most Popular Tourist Destinations In Bihar
+                        Bihar is one of the most ancient Indian states. Apart from its historical significance, the
+                        state is also a prime pilgrim spot. Every year many tourists worldwide come to explore the
+                        numerous Hindu, Buddhist, Jain, Muslim, and Sikh shrines. Among all Indian states, Bihar is most
+                        closely linked to Buddha’s life. Hence, there is a long trail of pilgrim sites here known as the
+                        Buddhist circuit.
+                    </p>
+                    <button class="btn">Read More</button>
+
+                </article>
+
+                <article class="blog-card">
+                    <img src="../assets/image/Most-Popular-tourist-destination-in-Bihar.jpg" alt="Blog 1">
+                    <h3>10 Best Travel Destinations for 2026</h3>
+                    <p>
+                        Discover the top travel destinations for 2026, from
+                        tropical paradises to cultural hotspots. Start planning
+                        your next adventure today!
+                    </p>
+                    <button class="btn">Read More</button>
+
+                </article>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2026 Travel. All rights reserved.</p>
+
+    </footer>
+</body>
+
+</html>
