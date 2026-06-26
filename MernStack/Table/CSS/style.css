@@ -1,0 +1,24 @@
+p{
+    background-color: bisque !important;
+    font-size: xx-large;
+    border: 1px dashed red;
+}
+*{
+    margin: 0;
+
+}
+#myid{
+    background-color: brown;
+    font-family: 'Times New Roman', Times, serif;
+}
+.parent{
+    font-size: 20px;
+
+}
+.child{
+   
+    font-size: 2em;
+    font-size: 2rem;
+    /* vh,vw */
+    /* box-sizing: border box */
+}

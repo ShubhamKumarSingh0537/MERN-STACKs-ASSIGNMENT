@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> Registration form</h1>
+    <form>
+        <label for="fname1">Enter your First Name:</label>
+        <input type="text" id="fname" name="fname" placeholder="enter your first name:"><br><br>
+        <label for="lname">Enter your last name:</label>
+        <input type="text" id="lname" name="lname" placeholder="enter your last name:"><br><br>
+        <label for="email">Enter youe email:</label>
+        <input type="email" id="email" name="email" placeholder="enter your email:"><br><br>
+        <label for="password">Enter your password:</label>
+        <input type="password" id="password" name="password" placeholder="enter your password:"><br><br>
+        <label for="num">Enter your number:</label>
+        <input type="number" id="num" min="0" max="10">
+        <h5>Choose your Gender:</h5>
+        <label for="female">Female</label>
+        <input type="radio" name="gender1" id="female" checked>
+        <label for="male">Male</label>
+        <input type="radio" name="gender2" id="male">
+        <label for="other">Other</label>
+        <input type="radio" name="gender3" id="other">
+        <h5>Choose your intrest</h5>
+        <input type="checkbox" name="html" id="html">
+        <label for="html">HTML</label>
+        <input type="checkbox" id="css" name="CSS">
+        <label for="css">CSS</label>
+        <input type="checkbox" id="js" name="js">
+        <label for="js">JS</label>
+        <br><br>
+        <label for="color">Choose color</label>
+        <input type="color" id="color" name="color"><br><br><!---value="green"-->
+        <input type="submit" value="click me">
+        <input type="reset">
+        <h6>Choose date</h6>
+        <label for="date">Choose date</label>
+        <input type="date" name="date" id="date"><br><br>
+        <label for="file">Choose file</label>
+        <input type="file" id="file"><br><br>
+        <label for="range">Choose range</label>
+        <input type="range" id="range" min="0" max="32"><br><br>
+        <label for="datetime-local">Choose date and time</label>
+        <input type="datetime-local" id="datetime-local" name="datetime-local">
+        <input type="hidden" id="fname" name="hidden" value="3487"><br>
+        <input type="image" src="https://cdn.wallpapersafari.com/23/12/gCG1cd.jpg" alt="Submit" width="80" height="80"><br><br>
+        <label for="text">Description</label>
+<textarea id="text" name="text" cols="18" rows="5">Description</textarea><br><br>
+<button>Submit</button>
+<label for="states">States</label>
+<select id="states" name="states">
+    <option value="--select state--" selected disabled> --select state-- </option>
+    <option value="Bihar">Bihar</option>
+    <option value="Jharkhand">Jharkhand</option>
+    <option value="Asam">Asam</option>
+    <option value="Dispur ">Dispur</option>
+    <option value="Punjab">Punjab</option>
+</select>
+<fieldset>
+    <legend>Gender</legend>
+    <label for="female">Female</label>
+        <input type="radio" name="gender1" id="female" checked>
+        <label for="male">Male</label>
+        <input type="radio" name="gender2" id="male">
+        <label for="other">Other</label>
+        <input type="radio" name="gender3" id="other">
+</fieldset>
+    </form>
+</body>
+
+</html>

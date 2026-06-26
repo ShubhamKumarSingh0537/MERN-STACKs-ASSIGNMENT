@@ -1,0 +1,28 @@
+button{
+    background: green;
+    padding: 10px 100px;
+    color: white;
+}
+input{
+  padding: 10px 100px;
+  border-radius: 15px; 
+ 
+}
+div{
+    border: 1px solid red;
+    padding-left: 55px;
+    margin: auto 350px;
+    padding-bottom: 20px;
+    background: rgb(3, 30, 110);
+    color: rgb(247, 247, 249);
+    align-items: center;
+
+
+
+}
+label{
+    text-align: left;
+}
+button:hover{
+    background: red;
+}
